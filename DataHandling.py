@@ -30,7 +30,7 @@ class DataHandling:
         df = df[df['Reported gene(s)'].str.lower().replace('null', '').str.strip().astype(bool)]
         return df
 
-    def calculate_frequencies(self, df: pd.DataFrame, disease_name: str):
+    def calculate_presence(self, df: pd.DataFrame, disease_name: str):
         gene_freq_df = df['Reported gene(s)'].value_counts().reset_index()
         gene_freq_df.columns = ['Gene', 'Frequency']
 
